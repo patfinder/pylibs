@@ -11,3 +11,12 @@ def dir2(obj):
     
     members = dir(obj)
     return [m for m in members if not m.startswith('__')]
+
+
+def pm(obj):
+    """
+    Print non-system members.
+    """
+    members = dir2(obj)
+    members = ', '.join(members)
+    print(f'{type(obj)}: {members}')
